@@ -20,34 +20,78 @@ function NewOrders() {
 
     return (
       <Container fluid>
-      <Row>
-        <Col size="md">
-          <Jumbotron>
-            <h1>What Books Should I Read?</h1>
+      <Jumbotron>
+            <h1>Create New Order and Patient</h1>
           </Jumbotron>
+      <Row>
+          <Col size="md">
+          <h3>Patient's Information</h3>
           <form>
             <Input
-              name="title"
-              placeholder="Title (required)"
+              name="Name"
+              placeholder="Name (required)"
             />
             <Input
-              name="author"
-              placeholder="Author (required)"
+              name="Sex"
+              placeholder="Sex (required)"
+              />
+            <Input
+              name="Email"
+              placeholder="Email (required)"
             />
             <TextArea
-              name="synopsis"
-              placeholder="Synopsis (Optional)"
+              name="Address"
+              placeholder="Address (Optional)"
             />
-            <FormBtn
-            >
-              Submit Book
-            </FormBtn>
+            
           </form>
         </Col>
         <Col size="md-6 sm-12">
-            <List>
-            </List>
-            <h3>No Results to Display</h3>
+            <h3>Patient's Contact Info</h3>
+            <form>
+            <Input
+              name="Landline"
+              placeholder="Landline (required)"
+            />
+            <Input
+              name="Phone"
+              placeholder="Phonne (required)"
+              />
+            <Input
+              name="Zip Code"
+              placeholder="Zip (required)"
+            />
+          </form>
+        </Col>
+        </Row>
+        <Row>
+        <Col size="sm-4 sm-4">
+          <form>
+          <h3>Test Costs</h3>
+            <Input
+              name="Costs"
+              placeholder="Cost"
+            />
+            <Input
+              name="Discount"
+              placeholder="Discount (required)"
+              />
+            <Input
+              name="Total"
+              placeholder="Total (required)"
+              />
+            <Input
+              name="Balance"
+              placeholder="Balance"
+            />  
+          </form>
+      </Col>
+        </Row>
+        <Row>
+        <Col size="md-6 sm-12">  
+        <FormBtn>
+              Submit Order
+            </FormBtn>
         </Col>
       </Row>
     </Container>
