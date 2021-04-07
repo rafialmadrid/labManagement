@@ -23,14 +23,14 @@ function NewOrders() {
       <Jumbotron>
             <h1>Create New Order and Patient</h1>
           </Jumbotron>
-      <Row>
-          <Col size="md">
+        <Row>
+        <Col size="md">
           <h3>Patient's Information</h3>
           <form>
             <Input
               name="Name"
               placeholder="Name (required)"
-            />
+              />
             <Input
               name="Sex"
               placeholder="Sex (required)"
@@ -38,15 +38,38 @@ function NewOrders() {
             <Input
               name="Email"
               placeholder="Email (required)"
-            />
+              />
             <TextArea
               name="Address"
               placeholder="Address (Optional)"
-            />
-            
+              />
           </form>
         </Col>
-        <Col size="md-6 sm-12">
+            </Row>
+        <Row>
+        <Col size="md-6">
+          <form>
+          <h3>Test Costs</h3>
+            <Input
+              name="Costs"
+              placeholder="Cost"
+              />
+            <Input
+              name="Discount"
+              placeholder="Discount (required)"
+              />
+            <Input
+              name="Total"
+              placeholder="Total (required)"
+              />
+            <Input
+              name="Balance"
+              placeholder="Balance"
+              />  
+              </form>
+            </Col>
+              </Row>
+        <Col size="md-6">
             <h3>Patient's Contact Info</h3>
             <form>
             <Input
@@ -63,32 +86,10 @@ function NewOrders() {
             />
           </form>
         </Col>
-        </Row>
+        
+        
         <Row>
-        <Col size="sm-4 sm-4">
-          <form>
-          <h3>Test Costs</h3>
-            <Input
-              name="Costs"
-              placeholder="Cost"
-            />
-            <Input
-              name="Discount"
-              placeholder="Discount (required)"
-              />
-            <Input
-              name="Total"
-              placeholder="Total (required)"
-              />
-            <Input
-              name="Balance"
-              placeholder="Balance"
-            />  
-          </form>
-      </Col>
-        </Row>
-        <Row>
-        <Col size="md-6 sm-12">  
+        <Col size="sm-4 sm-6 sm-4">  
         <FormBtn>
               Submit Order
             </FormBtn>
