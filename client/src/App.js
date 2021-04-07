@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
 import Home from "./pages/Home";
 import Patients from "./pages/Patients";
+import NewOrders from "./pages/NewOrders";
 import Orders from "./pages/Orders";
 import Results from "./pages/Results";
 import Detail from "./pages/Detail";
@@ -18,11 +18,8 @@ function App() {
         <Nava />
         <Switch>
           <Route exact path={["/", "/books"]}>
-            <Books />
-          </Route>
-
-          
-          <Route exact path={[ "/home"]}>
+          </Route> 
+          <Route exact path={[ "/"]}>
             < Home/>
           </Route>
           <Route exact path={[ "/patients"]}>
@@ -31,10 +28,12 @@ function App() {
           <Route exact path={[ "/orders"]}>
             < Orders/>
           </Route>
+          <Route exact path={[ "/neworders"]}>
+            < NewOrders/>
+          </Route>
           <Route exact path={[ "/results"]}>
             < Results/>
           </Route> 
-
           <Route exact path="/books/:id">
             <Detail />
           </Route>
