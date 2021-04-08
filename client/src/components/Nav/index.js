@@ -12,9 +12,9 @@ function Nava() {
         <Nav className="mr-auto">
       <Nav.Link href="patients">Patients</Nav.Link>
       <NavDropdown title="Orders" id="basic-nav-dropdown">
-          <NavDropdown.Item href="NewOrders">New Order w/Patients</NavDropdown.Item>
-          <NavDropdown.Item href="Patients">Existing Orders</NavDropdown.Item>
-        </NavDropdown>
+
+          <NavDropdown.Item href="NewPatient">New Order w/Patients</NavDropdown.Item>
+          <NavDropdown.Item href="ExistingOrders">Existing Orders</NavDropdown.Item></NavDropdown>
         
         <Nav.Link href="Results">Results</Nav.Link>
         <Nav.Link href="Tests">Tests</Nav.Link>       
