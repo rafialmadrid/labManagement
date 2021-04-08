@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import {
-  Input, Email, Sex, TextArea, FormBtn
+  Input, Email, Sex, TextArea,HeaderLabel, FormBtn
 } from "../components/Form";
 
 function NewOrders() {
@@ -19,9 +19,14 @@ function NewOrders() {
 
     return (
       <Container fluid>
-      <Jumbotron>
-            <h1>Create New Order and Patient</h1>
-          </Jumbotron>
+        &nbsp;&nbsp;
+        <Row>
+          <Col size="md">
+          <HeaderLabel>Create New Order and Patient</HeaderLabel>
+          </Col>
+        </Row>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
         <Row>
         <Col size="md">
           <h3>Patient's Information</h3>
@@ -36,10 +41,15 @@ function NewOrders() {
               name="LastName"
               placeholder="Name (required)"
               />
-            <label>Sex</label>
+            <label>Date of Birth</label>
+            <Input
+              name="DOB"
+              placeholder="DOB (required)"
+              />
             <Sex
               name="Sex"
               />
+            &nbsp;&nbsp;
             <Email
               name="Email"
               placeholder="Email (required)"
@@ -51,23 +61,46 @@ function NewOrders() {
               />
           </form>
         </Col>
-            </Row>
+        </Row>
+        &nbsp;&nbsp;
+        <Row>
+        <Col size="md">
+          <h3>Tests</h3>
+          <form>
+            <label>First Name</label>
+            <Input
+              name="FirstName"
+              placeholder="Name (required)"
+              />
+            <label>Last Name</label>
+            <Input
+              name="LastName"
+              placeholder="Name (required)"
+              />
+          </form>
+        </Col>
+        </Row>
+        &nbsp;&nbsp;
         <Row>
         <Col size="md-6">
           <form>
           <h3>Test Costs</h3>
+            <label>Costs</label>
             <Input
               name="Costs"
               placeholder="Cost"
               />
+            <label>Discount</label>
             <Input
               name="Discount"
               placeholder="Discount (required)"
               />
+            <label>Total</label>
             <Input
               name="Total"
               placeholder="Total (required)"
               />
+            <label>Remaining Balance</label>
             <Input
               name="Balance"
               placeholder="Balance"
@@ -77,14 +110,17 @@ function NewOrders() {
         <Col size="md-6">
             <h3>Patient's Contact Info</h3>
             <form>
+            <label>Landline</label>
             <Input
               name="Landline"
               placeholder="Landline (required)"
               />
+            <label>Mobile Phone</label>
             <Input
               name="Phone"
               placeholder="Phone (required)"
               />
+            <label>Zip Code</label>
             <Input
               name="Zip Code"
               placeholder="Zip (required)"
@@ -103,7 +139,9 @@ function NewOrders() {
               Modify Order
         </FormBtn>
         </Col>
-      </Row>
+        </Row>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
     </Container>
     );
 }
