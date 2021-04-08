@@ -25,9 +25,9 @@ module.exports = {
 					populate: {
 						path: "tests",
 						populate: {
-							path: "testCatalogueId",
+							path: "results",
 							populate: {
-								path: "parameters"
+								path: "parameter"
 							}
 						}
 					}
@@ -41,12 +41,16 @@ module.exports = {
 		},
 
 		update: async function (data){
-				
 		
 			try {
 				
 				id = data._id;
 				data = data.data;
+
+
+				if(data.orders) data = {$push: data};
+				
+
 
 				var patient = await db.Patient.findOneAndUpdate({_id: id}, data);
 

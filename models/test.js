@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TestSchema = new Schema({
-  testCatalogueId: {type: Schema.Types.ObjectId, ref:"TestCatalogue"},
   type: String,
-  delivery: Date
-  
+  delivery: Date,
+  testCatalogueId: {type: Schema.Types.ObjectId, ref:"TestCatalogue"},
+  results: [{type: Schema.Types.ObjectId, ref: "Result"}]
 });
 
 const Test = mongoose.model("Test", TestSchema);

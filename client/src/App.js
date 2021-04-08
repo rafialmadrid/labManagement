@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
 import Home from "./pages/Home";
 import Patients from "./pages/Patients";
 import Orders from "./pages/Orders";
@@ -17,10 +16,6 @@ function App() {
       <div>
         <Nava />
         <Switch>
-          <Route exact path={["/", "/books"]}>
-            <Books />
-          </Route>
-
           
           <Route exact path={[ "/home"]}>
             < Home/>
@@ -35,9 +30,6 @@ function App() {
             < Results/>
           </Route> 
 
-          <Route exact path="/books/:id">
-            <Detail />
-          </Route>
           <Route>
             <NoMatch />
           </Route>

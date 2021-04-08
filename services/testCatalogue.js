@@ -44,13 +44,15 @@ module.exports = {
 
 		update: async function (data){
 				
-
+		
 			try {
 				
 				var id = data._id;
 				var data = data.data;
 
-				var testCatalogue = await db.TestCatalogue.findOneAndUpdate({_id: id}, {$push: data});
+				if (data.parameters) data = {$push: data};
+
+				var testCatalogue = await db.TestCatalogue.findOneAndUpdate({_id: id}, data);
 
 
 				return testCatalogue;

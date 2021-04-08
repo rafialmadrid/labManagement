@@ -12,30 +12,46 @@ var services = require('../services');
 module.exports = {
   
   createPatientWithOrder: async function(req, res){
-        
+          
       try{
 
       const patient = await services.Patient.create(req.body.patient);
+
       const patientId = patient._id;
       
-
-
       const order = await services.Order.create(req.body.order);
-      const orderId = order._id; 
 
+      const orderId = order._id; 
       
       const updatePatient = await services.Patient.update({_id: patientId, data: {orders: orderId}});
 
        await req.body.test.asyncForEach(async (test) => {
             
             const patientTest = await services.Test.create(test);
+
             const patientTestId = patientTest._id;
             
             const updateOrder = await services.Order.update({_id: orderId, data: {tests: patientTestId}});
 
             const testCatalogue = await services.TestCatalogue.findById({_id: test.testCatalogueId});
-            console.log(testCatalogue);
+          
+            parameters = testCatalogue.parameters;
+
+                await parameters.asyncForEach(async (parameter) => {
+                
+                parameterId = parameter._id;
+
+                const result = await services.Result.create({"value": null, "text": null});
+
+                const resultId = result._id;
+                
+                const updateTest = await services.Test.update({_id: patientTestId, data: {results: resultId}});
+
+                const updateResult = await services.Result.update({_id: resultId, data: {parameter: parameterId}});
+
             
+              });
+
         });
 
       
@@ -51,7 +67,10 @@ module.exports = {
 
   },
 
-  createTestWithParameters: async function( req, res){
+
+
+  /*createTestWithParameters: async function( req, res ){
+
     try{
 
       console.log(req.body.testCatalogue);
@@ -72,9 +91,12 @@ module.exports = {
       res.status(200).json({ status: 200, data: {getTestCatalogue}, message: "Succesfully Test Catalogue Created" });      
 
     }catch(e){
+
         return res.status(400).json({ status: 400, message: e.message });
+
     }
-  }
+    
+  }*/
 
 
 }

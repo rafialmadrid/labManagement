@@ -34,7 +34,11 @@ module.exports = {
 				
 				var id = data._id;
 				var data = data.data;
-				var patient = await db.Order.findOneAndUpdate({_id: id}, {$push: data});
+
+				if (data.tests) data = {$push: data};
+				
+
+				var patient = await db.Order.findOneAndUpdate({_id: id}, data);
 				return patient;
 
 			} catch (e) {

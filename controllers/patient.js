@@ -48,7 +48,7 @@ module.exports = {
 
 
   update: async function (req, res) {
-        
+          
       try {
         
         var patient = await services.Patient.update(req.body);

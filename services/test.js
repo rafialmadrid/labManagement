@@ -29,12 +29,17 @@ module.exports = {
 		},
 
 		update: async function (data){
+
+
 			try {
 				
 				var id = data._id;
 				
 				var data = data.data;
+
+				if (data.results) data = {$push: data};
 				
+			
 				var test = await db.Test.findOneAndUpdate({_id: id}, data);
 				return test;
 
