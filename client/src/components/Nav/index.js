@@ -9,13 +9,15 @@ function Nava() {
     <Navbar.Brand href="Home">Lab Management</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-      <NavDropdown title="Patients" id="basic-nav-dropdown">
-          <NavDropdown.Item href="NewPatient">New</NavDropdown.Item>
-          <NavDropdown.Item href="Patients">Existing</NavDropdown.Item>
+        <Nav className="mr-auto">
+      <Nav.Link href="Orders">Patients</Nav.Link>
+      <NavDropdown title="Orders" id="basic-nav-dropdown">
+          <NavDropdown.Item href="NewPatient">New Order w/Patients</NavDropdown.Item>
+          <NavDropdown.Item href="Patients">Existing Orders</NavDropdown.Item>
         </NavDropdown>
-        <Nav.Link href="#Orders">Orders</Nav.Link>
-        <Nav.Link href="#Results">Results</Nav.Link>     
+        
+        <Nav.Link href="Results">Results</Nav.Link>
+        <Nav.Link href="Tests">Tests</Nav.Link>       
       </Nav>
     
     </Navbar.Collapse>
