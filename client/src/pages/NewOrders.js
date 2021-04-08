@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import {
-  Input, TextArea, FormBtn
+  Input, Email, Sex, TextArea, FormBtn
 } from "../components/Form";
 
 function NewOrders() {
@@ -27,21 +26,28 @@ function NewOrders() {
         <Col size="md">
           <h3>Patient's Information</h3>
           <form>
+            <label>First Name</label>
             <Input
-              name="Name"
+              name="FirstName"
               placeholder="Name (required)"
               />
+            <label>Last Name</label>
             <Input
-              name="Sex"
-              placeholder="Sex (required)"
+              name="LastName"
+              placeholder="Name (required)"
               />
-            <Input
+            <label>Sex</label>
+            <Sex
+              name="Sex"
+              />
+            <Email
               name="Email"
               placeholder="Email (required)"
               />
+            <label>Address</label>
             <TextArea
               name="Address"
-              placeholder="Address (Optional)"
+              placeholder="Address (Required)"
               />
           </form>
         </Col>
@@ -68,31 +74,34 @@ function NewOrders() {
               />  
               </form>
             </Col>
-              </Row>
         <Col size="md-6">
             <h3>Patient's Contact Info</h3>
             <form>
             <Input
               name="Landline"
               placeholder="Landline (required)"
-            />
+              />
             <Input
               name="Phone"
-              placeholder="Phonne (required)"
+              placeholder="Phone (required)"
               />
             <Input
               name="Zip Code"
               placeholder="Zip (required)"
-            />
+              />
           </form>
         </Col>
-        
-        
+              </Row>
         <Row>
-        <Col size="sm-4 sm-6 sm-4">  
+        <Col size="sm-4 sm-4">  
         <FormBtn>
               Submit Order
-            </FormBtn>
+           </FormBtn>
+          </Col>
+        <Col size="sm-4 sm-4">
+        <FormBtn>
+              Modify Order
+        </FormBtn>
         </Col>
       </Row>
     </Container>
