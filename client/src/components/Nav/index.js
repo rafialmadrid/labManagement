@@ -13,7 +13,7 @@ function Nava() {
       <Nav.Link href="Orders">Patients</Nav.Link>
       <NavDropdown title="Orders" id="basic-nav-dropdown">
           <NavDropdown.Item href="NewPatient">New Order w/Patients</NavDropdown.Item>
-          <NavDropdown.Item href="Patients">Existing Orders</NavDropdown.Item>
+          <NavDropdown.Item href="ExistingOrders">Existing Orders</NavDropdown.Item>
         </NavDropdown>
         
         <Nav.Link href="Results">Results</Nav.Link>
