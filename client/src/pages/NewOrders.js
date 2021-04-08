@@ -65,19 +65,46 @@ function NewOrders() {
         &nbsp;&nbsp;
         <Row>
         <Col size="md">
-          <h3>Tests</h3>
+            <h3>Tests</h3>
+            
+          <Row>  
+          <Col size="md">
           <form>
-            <label>First Name</label>
+            <label>ID Test</label>
             <Input
-              name="FirstName"
-              placeholder="Name (required)"
+              name="id"
+              placeholder="Type test ID number"
               />
-            <label>Last Name</label>
+            </form>
+            </Col>
+              <Col size="md">
+              <form>
+            <label>Test Name</label>
             <Input
-              name="LastName"
-              placeholder="Name (required)"
+              name="Test"
+              placeholder="Name of test"
               />
-          </form>
+              </form>
+              </Col>
+              <Col size="md">
+              <form>
+            <label>Cost</label>
+            <Input
+              name="Cost"
+              placeholder="Cost of test"
+              />
+              </form>
+              </Col>
+              <Col size="md">
+              <form>
+            <label>Days</label>
+            <Input
+              name="Days"
+              placeholder="Number of days"
+              />
+              </form>
+              </Col>
+            </Row>
         </Col>
         </Row>
         &nbsp;&nbsp;
