@@ -16,39 +16,32 @@ function App() {
     <Router>
       <div>
         <Nava />
-        <Switch>
-<<<<<<< HEAD
-          
-          <Route exact path={[ "/home"]}>
-=======
-          <Route exact path={["/", "/books"]}>
-          </Route> 
+        <Switch>          
+
           <Route exact path={[ "/"]}>
->>>>>>> main
             < Home/>
           </Route>
+
           <Route exact path={[ "/patients"]}>
             < Patients/>
           </Route>
+
           <Route exact path={[ "/orders"]}>
             < Orders/>
           </Route>
+
           <Route exact path={[ "/neworders"]}>
             < NewOrders/>
           </Route>
+
           <Route exact path={[ "/results"]}>
             < Results/>
           </Route> 
-<<<<<<< HEAD
 
-=======
-          <Route exact path="/books/:id">
-            <Detail />
-          </Route>
->>>>>>> main
           <Route>
             <NoMatch />
           </Route>
+
         </Switch>
       </div>
     </Router>
