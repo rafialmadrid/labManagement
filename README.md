@@ -1,4 +1,5 @@
-# <img src="./assets/lab-management-header.png" width="50"/> DentApp - Appointment Managing System 
+# <img src="./assets/lab-management-header.png" /> 
+# LabManagement Order System 
 ​
 ---
 
@@ -7,12 +8,11 @@
 2. [Functionalities](#functionalities)
 3. [List of Dependencies and Libraries](#list-of-dependencies-and-libraries) 
 4. [Installation](#installation)
-5. [How to Set Profiles and Appointments](#how-to-set-user-profiles-and-appointments)
-6. [Demo](#demo)
-7. [Licenses](#licenses)
-8. [Support and Contributions](#support-and-contributions)
-9. [Future Development](#future-development)
-10. [Credits and Acknowledgements](#credits-and-acknowledgements) 
+5. [Demo](#demo)
+6. [Licenses](#licenses)
+7. [Support and Contributions](#support-and-contributions)
+8. [Future Development](#future-development)
+9. [Credits and Acknowledgements](#credits-and-acknowledgements) 
 ​
 
 ​
@@ -24,64 +24,46 @@
 ​
 ​
 ``
-AS a dentistry specialist,
-I NEED an appointment management system,
-that ALLOWS me to CREATE a user that is able to 
-CREATE and EDIT new patient records and, 
-SET appointments for different services in a calendar.  
+AS the owner of a private medical laboratory,
+I NEED a managing system,
+that ALLOWS me to CREATE orders for medical tests and results for patients, 
+as well as CREATE and EDIT patient records, test orders, and lab results.
 ``
+​--
+
+**labManagement** is a Laboratory Information Management System (LIMS), a type software that allows the effective management of samples, lab tests, and associated medical data. 
+By using a LIMS, a private commercial laboratory can automate workflows, integrate instruments, and manage sales, and patients' records. 
 ​
 
-​
-**DentApp** is a web application that can help dentists and other medical specialists install a simple server-based appointment system for their clinics or private offices. The system allows for simple management of their patients' appointments and to track medical services and treatments through verified users. 
-​
-
-​
 ---
 ​
 ## Functionalities
 ​
-Currently, the system offers the following *features*:
+This React-based LIMS allows users to:
 ​
-* Users can create their own single user profile (first and last name, email, and password) and log in into the system.
-* Logged in users (email and password) can then create a new patient profile and input their personal information and clinical history (first and last name, email, phone number; sex, age, previous diseases; current medication, allergies, and general observations).
-* After setting the profile of a patient, the user can create an appointment (date, start and end time of appointment, and patient's name) and set a service treatment for that patient.
-* The calendar tool allows users to filter appointments by date.
-* Users can also add service treatments in a separate section. They can add a new service by adding the information and costs of said service. 
-* The system currently allows editing information of patients, services, and appointments. 
-​
-
+* Create new orders by addinng the information of a patient and the type and cost of their laboratory tests.
+* After setting the profile of a patient, users can edit orders or look at the different screens to search for tests, results, or specific orders using IDs. 
+* A calendar tool allows users to filter orders by date.
+* The Existing Orders screen allows users to search already submitted orders and look at their information.​
 ​
 ---
 ​
 ## List of Dependencies and Libraries
 ​
-The application was designed and programmed through a combination of *JavaScript*, *pure HTML*, *pure CSS*, one third-party *CSS framework*, and several *Node.js CLI* Dependencies and *NPM* libraries. The application is fully functional and hosted in a *Heroku* external server.
+The application was designed and programmed using the Router and Router-DOM functions of native *React.js*.
+
+The database and search system is based on the popular *MongoDB* database service anda combination of *JavaScript*, *pure HTML*, *pure CSS*, and *Bootstrap*, a third-party *CSS framework*. The LIMS also uses *Node.js CLI* and additional *NPM* libraries. The application is fully functional and hosted in a *Heroku* external server.
 ​
 The Full-Stack breakdown of the application is as follows:
 ​
-* [Bulma](https://bulma.io/) is an open-source free CSS framework for HTML. The framework was used in the overall design of the website and its different sections.
+* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) and [React Bootstrap Components](https://react-bootstrap.github.io/) the world’s most popular framework for building responsive, mobile-first sites, with jsDelivr and a template starter page.
 ​
 * [NodeJS](https://nodejs.org/en/) is one of the most widely used local server environments for JavaScript programming. NodeJS was used for local server-testing and to handle server and database connections.
 ​
-* [Express](https://www.npmjs.com/package/express) is a NodeJS-based npm web framework library. It was integrated into JavaScript in order to handle HTTP requests from the database schemas.
+* [Express](https://www.npmjs.com/package/express) is a NodeJS-based npm web framework library. It was integrated into JavaScript in order to handle HTTP requests from the database schemas. 
 ​
-* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) Handlebars is a npm Express extension library used for web templating. In this application, Handlebars was used to integrate Bulma's HTML and CSS models in loading the different sections of the Front-End UI.  
-​
-* Oracle's [MySQL](https://www.mysql.com/) and [MySQL2](https://www.npmjs.com/package/mysql2) are one of the most widely used database services in Full-Stack web development. We used MySQL's workbench to develop the database that serves as the basis for the management system and the automatic creation of tables and ID elements. MySQL2 is the improved npm library version of MySQL and it can handle several new dependencies that its predecessor couldn't.  
-​
-* [Sequelize](https://www.npmjs.com/package/sequelize) is a npm library tool that uses a promise-based semantic structure, which simplifies database processing and the creation of modules for configuration and back-end scripting. Sequelize handles all database promises in the application.
-​
-* [Passport](https://www.npmjs.com/package/passport) and [Passport-Local](https://www.npmjs.com/package/passport-local) are Express-based library tools to integrate user authentication into script frameworks. Passport handles authentication, while Passport-Local focuses on authenticating events using an email and a password. These two dependencies are the basis for the Login/SignUp features of this application. 
-​
-* [Express-Session](https://www.npmjs.com/package/express-session) is an Express extension library used for parsing of cookies and URL parameters. This allows for hiding Back-End data from the Front-End, for example sensitive information, such as, user data and passwords. It sets an ID for a client in the database and manages requests from the server linked to this ID. This application uses Sessions as middleware step in the authentication process.
-​
-* [BcryptJS](https://www.npmjs.com/package/bcrypt) is an extension library that, when implemented, automatically hashes/encrypts passwords in a database. This application integrates Bcrypt in the authentication process and sends a hashed/encrypted password when a new user is registered to the database. 
-​
-* [Moment.js](https://www.npmjs.com/package/bcrypt) is a basic date-time library tool that parses and generates time data into JavaScript. Moment.js was used in this application to generate the basic Calendar tool in the Appointments section.
-​
+* [MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era.  
 
-​
 ---
 ​
 ## Installation
@@ -94,65 +76,13 @@ If you are interested in running **DentApp** locally, you can follow these steps
 ​
 3. Open your preferred code editor, navigate into the configuration folder and add your local server credentials in the development object (username, password, and local host).
 ​
-4. After everything is set, you can then run the application `server.js` using Node in your terminal. After, navigate to your localhost connection on your preferred web browser. 
-​
-Or, alternatively, you can use the demo page we deployed on a [Heroku](https://www.heroku.com/platform) external server. You can access the functional app [here](https://protected-sands-23388.herokuapp.com/). 
-​
-
-​
----
-​
-## How to Set User Profiles and Appointments
-​
-1. Navigate to main page `localhost:[yourlocalhost]/` and click **Profile** on the left navigation bar.
-​
-2. The site will send you to the User creation page. Type your info and click the **Sign Up** button.
-
-<img src="./views/images/user-creation.png" width="300"/>
-
-​
-3. If the user was created successfully, the page will then send you to the **Login** page. Input your credentials and click the **Login** button.
-​
- 
-<img src="./views/images/login-info.png" width="250"/>
-
-​
-4. After logging in, you can create a patient by clicking **Patients** on the navigation bar. 
-​
-5. In the **Patients** page, you can add a new patient by clicking the **Create** button.
-​
-6. Fill in the form all the patient's information and clinical history. Then, click the **Save** button. 
- 
-<img src="./views/images/create-patient.png" width="300"/>
- 
-​
-7. You can always view, edit, or delete a patient using the buttons on the right side.
- 
-<img src="./views/images/edit-buttons.png" width="350"/>
- 
-​
-8. You can set an appointment in the **Appointments** section. There, select a date using the dropdown calendar tool, then click the **Create** button to set an appointment for that date.
-
-<img src="./views/images/appointment.png" width="350"/>
-
-​
-9. In the form, select start and end times for the appointment, and type the name of the patient and the service provided. Don't forget to click **Save** after you're done.
-
-<img src="./views/images/appointment-set.png" width="350"/>
-
-​
-10. By selecting different dates on the calendar, you can filter the appointments for each date. Remember that you can also edit an appointment's information (time, service and/or name of the patient).
-​
-11. The **Services** page has the same functionalities as the **Patients**/**Appointments** section. The main difference is that you can add a price for the service provided. 
-
-<img src="./views/images/services.png" width="400"/>
-
+4. After everything is set, you can then run the application `server.js` using Node in your terminal. After, navigate to your localhost connection on your preferred web browser. Or, alternatively, you can use the demo page we deployed on a [Heroku](https://www.heroku.com/platform) external server. You can access the functional app [here](https://labmanagement1.herokuapp.com/). 
 ​
 ---
 ​
 ## Demo
 ​
-The following Gif provides a demonstration of **DentApp's** functionalities:
+The following Gif provides a demonstration of this application:
 ​
 ![App Demo](./views/images/deantAPPointment_2.gif)
 ​
@@ -182,7 +112,7 @@ If you're experiencing any issues with the code, feel free to contact us through
 
 ​
 ---
-​
+
 ## Future Development
 ​
 These are some improved functionalities we want to add to the project in the near future:
@@ -203,16 +133,14 @@ These are some improved functionalities we want to add to the project in the nea
 ​
 * Create a separate User system for clients, so they can also access their information, balance account, and appointments online. 
 ​
-
-​
 ---
 ​
 ## Credits and Acknowledgements
 ​
 This project was conceived, developed, and coded by:
 ​
-* **Alhelí Miranda Campos** [Github: AlheliMi](https://github.com/AlheliMi)
-* **José Pineda Esquer** [Github: jpineda30](https://github.com/jpineda30)
-* **Mario N. Castro Villarreal** [Github: mncastro](https://github.com/mncastro)
+* **Antonio** [Github: AlheliMi](https://github.com/ANTONVAN) (Back-end Developer)
+* **Rafael Magaña García** [Github: jpineda30](https://github.com/rafialmadrid) (Front-end Developer)
+* **Mario N. Castro Villarreal** [Github: mncastro](https://github.com/mncastro) (Front-end developer)
 ​
-We would like to give special thanks to our Full-Stack Web Development Bootcamp instructors, Diana (main instructor) and Fernanda (TA), for their invaluable help in fixing the connection models and the Passport authentication implementation.
+We would like to give special thanks to our Full-Stack Web Development Bootcamp instructors, Diana (main instructor) and Fernanda (TA), for their invaluable help in fixing the connection models of the back-end.
