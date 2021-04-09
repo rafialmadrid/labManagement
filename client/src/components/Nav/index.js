@@ -10,7 +10,7 @@ function Nava() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-      <Nav.Link href="Orders">Patients</Nav.Link>
+      <Nav.Link href="Patients">Patients</Nav.Link>
       <NavDropdown title="Orders" id="basic-nav-dropdown">
 
           <NavDropdown.Item href="NewOrders">New Order w/Patients</NavDropdown.Item>
