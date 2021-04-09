@@ -19,7 +19,7 @@ function App() {
         <Nava />
         <Switch>
           <Route exact path={["/", "/books"]}>
-          </Route> 
+          </Route>
           <Route exact path={[ "/"]}>
             < Home/>
           </Route>
