@@ -3,13 +3,23 @@ import { Form, FormControl } from 'react-bootstrap';
 import { Col, Row, Container } from "../components/Grid";
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
+import {HeaderLabel} from "../components/Form";
 
 
 function ExistingOrders() {
   return (
 
     <Container fluid>
+
+       &nbsp;&nbsp;
+        <Row>
+          <Col size="md">
+          <HeaderLabel>Search for an Order by Date or ID</HeaderLabel>
+          </Col>
+        </Row>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
 
     <Row>
     <Col size="md">
