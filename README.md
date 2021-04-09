@@ -68,7 +68,7 @@ The Full-Stack breakdown of the application is as follows:
 ​
 ## Installation
 ​
-If you are interested in running **DentApp** locally, you can follow these steps:
+If you are interested in running **labManagement** locally, you can follow these steps:
 ​
 1. Clone or download the repo.
 ​
@@ -84,7 +84,7 @@ If you are interested in running **DentApp** locally, you can follow these steps
 ​
 The following Gif provides a demonstration of this application:
 ​
-![App Demo](./views/images/deantAPPointment_2.gif)
+![App Demo]
 ​
 
 ​
@@ -107,7 +107,7 @@ The following Gif provides a demonstration of this application:
 ## Support and Contributions
 ​
 This project is not currently looking for contributors.
-If you're experiencing any issues with the code, feel free to contact us through GitHub or raise an [issue](https://github.com/jpineda30/Project-2/issues) in the original repository. 
+If you're experiencing any issues with the code, feel free to contact us through GitHub or raise an [issue](https://github.com/rafialmadrid/labManagement/issues) in the original repository. 
 ​
 
 ​
@@ -117,21 +117,19 @@ If you're experiencing any issues with the code, feel free to contact us through
 ​
 These are some improved functionalities we want to add to the project in the near future:
 ​
-* Integrate appointment management through each specific user. As of right now, all users are integrated into a global database that shares appointments, services, and patients. The goal is for each user to display their own patients and appointments.
+* Integrate a sidebar in order to edit and add orders in a single page. 
 ​
-* Only one service per patient can be created. In the future, we would like to add more than one service to each patient.
+* Improve design of fron-end. Right now is minimalist and bare-bones, but there's a lot of room for improvement. 
 ​
-* Integrate files for each patient, showing their service/treatment history. In addition, we want to add some kind of documentation visualizer so users can access patients' documents (for example, reports or X-Ray charts).
+* Succesfully integrate a sales system for orders, rather than just inputting the costs manually.
 ​
-* Create a payment and balance system for appointments showing patients' current or pending payments and total balance owed. 
+* Currently the landing page and the login system is a mock-up. It requires login in for accesing the system, but there is no user authentication, as well as the possibility of adding and registering users. 
 ​
 * General improvement to user's functionalities and interface: a status showing what user is logged in, and a functionality to edit or add users' information to the profile page.
 ​
-* Integrate medical inventory to services: costs of materials needed for treatments, status of available materials, and capacity to order/reorder more inventory. 
+* Integrate an email/calendar system for patients: send email remainders to patients about upcoming tests and discounts. 
 ​
-* Integrate an email/calendar system for patients: send email remainders to patients about upcoming appointments and develop a connection to a calendar API that can help patients integrate their appointments to their schedules. 
-​
-* Create a separate User system for clients, so they can also access their information, balance account, and appointments online. 
+* Create a separate User system for clients, so they can also access their information, balance account, and existing orders online. 
 ​
 ---
 ​
@@ -139,8 +137,6 @@ These are some improved functionalities we want to add to the project in the nea
 ​
 This project was conceived, developed, and coded by:
 ​
-* **Antonio** [Github: AlheliMi](https://github.com/ANTONVAN) (Back-end Developer)
+* **Antonio Ramos Coronado** [Github: AlheliMi](https://github.com/ANTONVAN) (Back-end Developer)
 * **Rafael Magaña García** [Github: jpineda30](https://github.com/rafialmadrid) (Front-end Developer)
 * **Mario N. Castro Villarreal** [Github: mncastro](https://github.com/mncastro) (Front-end developer)
-​
-We would like to give special thanks to our Full-Stack Web Development Bootcamp instructors, Diana (main instructor) and Fernanda (TA), for their invaluable help in fixing the connection models of the back-end.
