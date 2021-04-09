@@ -13,8 +13,15 @@ function Nava() {
       <Nav.Link href="patients">Patients</Nav.Link>
       <NavDropdown title="Orders" id="basic-nav-dropdown">
 
+<<<<<<< HEAD
           <NavDropdown.Item href="NewPatient">New Order w/Patients</NavDropdown.Item>
           <NavDropdown.Item href="ExistingOrders">Existing Orders</NavDropdown.Item></NavDropdown>
+=======
+          <NavDropdown.Item href="NewOrders">New Order w/Patients</NavDropdown.Item>
+          <NavDropdown.Item href="ExistingOrders">Existing Orders</NavDropdown.Item>
+
+        </NavDropdown>
+>>>>>>> a12e3c3ecf4bebd04aa0645d989c3474aa5697c4
         
         <Nav.Link href="Results">Results</Nav.Link>
         <Nav.Link href="Tests">Tests</Nav.Link>       
