@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
-import DeleteBtn from "../components/DeleteBtn";
+
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
