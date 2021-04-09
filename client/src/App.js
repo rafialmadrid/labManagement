@@ -29,7 +29,7 @@ function App() {
           <Route exact path={[ "/orders"]}>
             < Orders/>
           </Route>
-          <Route exact path={[ "/neworders"]}>
+          <Route exact path={[ "/NewOrders"]}>
             < NewOrders/>
           </Route>
           <Route exact path={[ "/results"]}>
