@@ -7,6 +7,7 @@ import Orders from "./pages/Orders";
 import Results from "./pages/Results";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
+import ExistingOrders from "./pages/ExistingOrders";
 import Nava from "./components/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path={[ "/results"]}>
             < Results/>
+          </Route> 
+          <Route exact path={[ "/existingorders"]}>
+            < ExistingOrders/>
           </Route> 
           <Route exact path="/books/:id">
             <Detail />
