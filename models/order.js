@@ -11,7 +11,8 @@ const OrderSchema = new Schema({
   charge: Number,
   branch: String,
   date: { type: Date, default: Date.now },
-  tests: [{type: Schema.Types.ObjectId, ref: "Test"}]
+  tests: [{type: Schema.Types.ObjectId, ref: "Test"}],
+  patient: {type: Schema.Types.ObjectId, ref: "Patient"}
 });
 
 const Order = mongoose.model("Order", OrderSchema);

@@ -8,6 +8,12 @@ module.exports = {
 	    try {
 
 	        var orders = await db.Order.find(query)
+	        .populate({
+	        	path: "tests",
+	        	populate: {
+	        		path: "testCatalogueId"
+	        	}
+	        })
 	        return orders;
 
 	    } catch (e) {
@@ -19,8 +25,33 @@ module.exports = {
 		findById: async function(data) {
 			try {
 
-				var patient = await db.Order.findById(data._id);
-				return patient;
+				var order = await db.Order.findById(data._id)
+				.populate([
+				{
+
+					path: "tests",
+
+					populate: {
+
+						path: "results",
+
+							populate: {
+								path: "parameter"
+							}
+
+					}
+				},
+				{
+					path: "tests",
+
+					populate: {
+
+						path: "testCatalogueId"
+
+					}
+				}
+				]);
+				return order;
 
 			} catch (e) {
 				//Log Errors

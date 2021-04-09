@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const parameterSchema = new Schema({
   code: String,
   name: String,
-  units: String
+  units: String,
+  range: String
 });
 
 const Parameter = mongoose.model("Parameter", parameterSchema);

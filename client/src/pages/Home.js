@@ -1,7 +1,6 @@
-import React,{ Component } from "react";
+import React from "react";
 import Container from 'react-bootstrap/Container';
-import { render } from 'react-dom';
-import Typed from 'react-typed';
+
 
 // class MyComponent extends Component {
 //   render() {

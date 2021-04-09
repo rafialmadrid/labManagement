@@ -7,12 +7,12 @@ router
 .put('/', controllers.Order.update)
 .delete('/', controllers.Order.remove);
 
-// Matches with "/api/books/:id"
-/*router
+// Matches with "/api/orders/:id"
+router
   .route("/:id")
-  .get(controllers.Order.findById)
-  .put(controllers.Order.update)
-  .delete(controllers.Order.remove);*/
+  .get(controllers.Order.findById);
+  /*.put(controllers.Order.update)
+  .delete(controllers.Order.remove)*/
 
 	
 module.exports = router;

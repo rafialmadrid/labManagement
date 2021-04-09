@@ -5,10 +5,10 @@ import Patients from "./pages/Patients";
 import NewOrders from "./pages/NewOrders";
 import Orders from "./pages/Orders";
 import Results from "./pages/Results";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import ExistingOrders from "./pages/ExistingOrders";
 import Nava from "./components/Nav";
+import ResultsEntry from "./pages/ResultsEntry";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -16,7 +16,10 @@ function App() {
   return (
     <Router>
       <div>
+
+
         <Nava />
+
         <Switch>          
 
           <Route exact path={[ "/"]}>
@@ -38,6 +41,11 @@ function App() {
           <Route exact path={[ "/results"]}>
             < Results/>
           </Route> 
+          
+          <Route exact path={[ "/ResultsEntry/:id"]}>
+              < ResultsEntry/>
+          </Route>
+
 
           <Route exact path={[ "/existingorders"]}>
             < ExistingOrders/>

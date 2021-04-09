@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Table from 'react-bootstrap/Table';
+import Form from 'react-bootstrap/Form';
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -14,10 +15,40 @@ import {
 } from "../components/Form";
 
 function Results() {
+
+  // Setting our component's initial state
+  const [orders, setOrders] = useState([])
+  const [formObject, setFormObject] = useState({})
+
+  // Load all books and store them with setBooks
+  useEffect(() => {
+    loadOrders()
+  }, [])
+
+  // Loads all books and sets them to books
+  function loadOrders() {
+    API.getOrders()
+      .then(res => {
+        setOrders(res.data.data);
+        console.log(res.data.data);
+      }
+      )
+      .catch(err => console.log(err));
+  };
   // Setting our component's initial state
   
   // When the form is submitted, use the API.saveBook method to save the book data
   // Then reload books from the database
+
+  // When the form is submitted, use the API.saveBook method to save the book data
+  // Then reload books from the database
+  function handleFormSubmit(event) {
+
+    console.log(loadOrders());
+
+  };
+
+                
 
     return (
       <Container fluid>
@@ -31,7 +62,9 @@ function Results() {
         <Row>
 
           <Col size= "md">
-            <form>
+
+            <Form inline>
+
               <Input
                 name="month"
                 placeholder="Month (optional)"
@@ -49,12 +82,15 @@ function Results() {
               placeholder="Order (required)"
               />
 
-            </form>
-
-            <FormBtn>
+            <FormBtn
+              onClick={handleFormSubmit}
+            >
                 Search
             </FormBtn>
-            
+
+            </Form>
+
+
 
           </Col>
 
@@ -62,33 +98,48 @@ function Results() {
 
         <Row>
 
-          <Table striped bordered hover size="sm">
+          <Table striped bordered hover variant="dark" size="sm">
             <thead>
               <tr>
-                <th>#</th>
-                <th>First Name</th>
+                <th>ID</th>
+                <th>Name</th>
                 <th>Last Name</th>
-                <th>Username</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Delivery</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+                {orders.map(order => (
+                  <>
+                     <tr key={order._id}>
+                        <td>
+                          <Link to={"/ResultsEntry/" + order._id}>
+                          {order._id}
+                          </Link>
+                        </td>                      
+                        <td></td>                      
+                        <td></td>                      
+                        <td></td>                      
+                        <td></td>                      
+                        <td></td>                      
+                     </tr>
+                     
+                     {order.tests.map(test => (
+                       <tr>
+                        <td>{test.testCatalogueId.name}</td>
+                        <td></td>
+                        <td></td>
+                        <td>{test.testCatalogueId.department}</td>
+                        <td></td>
+                        <td>{test.delivery}</td>
+                       </tr> 
+                      ))}
+
+
+                   </>
+                  ))}
+
             </tbody>
           </Table>
 
