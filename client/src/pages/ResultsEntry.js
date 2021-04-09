@@ -99,6 +99,7 @@ function ResultsEntry() {
             "data": { 
 
               "value": input.value,
+              
               "text": "this is text"
 
             }            

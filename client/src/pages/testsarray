@@ -1,0 +1,145 @@
+[
+    {
+        "results": [
+            {
+                "_id": "606f5bb6d43d623174d393e2",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f58b68d621893a41eebfa",
+                    "code": "HCR",
+                    "name": "HEMATOCRITO",
+                    "units": "%",
+                    "range": "37-47",
+                    "__v": 0
+                }
+            },
+            {
+                "_id": "606f5bb6d43d623174d393e3",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f58bd8d621893a41eebfb",
+                    "code": "RBC",
+                    "name": "ERITROCITOS",
+                    "units": "10^6/mm3",
+                    "range": "3.5-5.0",
+                    "__v": 0
+                }
+            },
+            {
+                "_id": "606f5bb6d43d623174d393e4",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f590b8d621893a41eebfc",
+                    "code": "HG",
+                    "name": "HEMOGLOBINA",
+                    "units": "g/dL",
+                    "range": "12.0-16.0",
+                    "__v": 0
+                }
+            },
+            {
+                "_id": "606f5bb6d43d623174d393e5",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f59588d621893a41eebfd",
+                    "code": "PLT",
+                    "name": "PLAQUETAS",
+                    "units": "10^3/uL",
+                    "range": "150-550",
+                    "__v": 0
+                }
+            }
+        ],
+        "_id": "606f5bb6d43d623174d393e1",
+        "testCatalogueId": {
+            "parameters": [
+                "606f58b68d621893a41eebfa",
+                "606f58bd8d621893a41eebfb",
+                "606f590b8d621893a41eebfc",
+                "606f59588d621893a41eebfd"
+            ],
+            "_id": "606f57c88d621893a41eebf9",
+            "code": "BH",
+            "name": "BIOMETRÍA HEMÁTICA",
+            "department": "HEMATOLOGÍA",
+            "days": 0,
+            "price": 150,
+            "__v": 0
+        },
+        "delivery": "2001-02-01T07:00:00.000Z",
+        "type": "N",
+        "__v": 0
+    },
+    {
+        "results": [
+            {
+                "_id": "606f5bb6d43d623174d393e7",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f5ab08d621893a41eebff",
+                    "code": "GLU",
+                    "name": "GLUCOSA",
+                    "units": "mg/dL",
+                    "range": "60.0-100.0",
+                    "__v": 0
+                }
+            },
+            {
+                "_id": "606f5bb6d43d623174d393e8",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f5ad08d621893a41eec00",
+                    "code": "URE",
+                    "name": "UREA",
+                    "units": "mg/dL",
+                    "range": "14.9-40.0",
+                    "__v": 0
+                }
+            },
+            {
+                "_id": "606f5bb6d43d623174d393e9",
+                "value": 12,
+                "text": "this is text",
+                "__v": 0,
+                "parameter": {
+                    "_id": "606f5ae68d621893a41eec01",
+                    "code": "CRE",
+                    "name": "CREATININA",
+                    "units": "mg/dL",
+                    "range": "0.5-1.5",
+                    "__v": 0
+                }
+            }
+        ],
+        "_id": "606f5bb6d43d623174d393e6",
+        "testCatalogueId": {
+            "parameters": [
+                "606f5ab08d621893a41eebff",
+                "606f5ad08d621893a41eec00",
+                "606f5ae68d621893a41eec01"
+            ],
+            "_id": "606f5a6a8d621893a41eebfe",
+            "code": "QSP",
+            "name": "PERFIL DE QUIMICAS PRIVADO",
+            "department": "QUMICA",
+            "days": 0,
+            "price": 400,
+            "__v": 0
+        },
+        "delivery": "2001-02-01T07:00:00.000Z",
+        "type": "N",
+        "__v": 0
+    }
+]

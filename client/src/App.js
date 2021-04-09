@@ -34,7 +34,7 @@ function App() {
             < Orders/>
           </Route>
 
-          <Route exact path={[ "/neworders"]}>
+          <Route exact path={[ "/NewOrders"]}>
             < NewOrders/>
           </Route>
 
