@@ -127,8 +127,6 @@ These are some improved functionalities we want to add to the project in the nea
 ​
 * General improvement to user's functionalities and interface: a status showing what user is logged in, and a functionality to edit or add users' information to the profile page.
 ​
-* Integrate an email/calendar system for patients: send email remainders to patients about upcoming tests and discounts. 
-​
 * Create a separate User system for clients, so they can also access their information, balance account, and existing orders online. 
 ​
 ---
@@ -137,6 +135,6 @@ These are some improved functionalities we want to add to the project in the nea
 ​
 This project was conceived, developed, and coded by:
 ​
-* **Antonio Ramos Coronado** [Github: AlheliMi](https://github.com/ANTONVAN) (Back-end Developer)
-* **Rafael Magaña García** [Github: jpineda30](https://github.com/rafialmadrid) (Front-end Developer)
+* **Antonio Ramos Coronado** [Github: ANTONVAN](https://github.com/ANTONVAN) (Back-end Developer)
+* **Rafael Magaña García** [Github: rafialmadrid](https://github.com/rafialmadrid) (Front-end Developer)
 * **Mario N. Castro Villarreal** [Github: mncastro](https://github.com/mncastro) (Front-end developer)
