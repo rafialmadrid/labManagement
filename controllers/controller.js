@@ -12,7 +12,9 @@ var services = require('../services');
 module.exports = {
   
   createPatientWithOrder: async function(req, res){
-          
+            
+            
+            
       try{
 
       const patient = await services.Patient.create(req.body.patient);
@@ -41,7 +43,7 @@ module.exports = {
                 
                 parameterId = parameter._id;
 
-                const result = await services.Result.create({"value": null, "text": null});
+                const result = await services.Result.create({"value": null, "text": ""});
 
                 const resultId = result._id;
                 

@@ -2,6 +2,17 @@ import React from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+
+        /*<Nav>
+        <Link to={"/Patients"}>Patients</Link>
+        </Nav>*/
+
+
+        /*<Nav>
+        <Link to={"/Tests"}>Tests</Link>
+        </Nav>       */
 
 function Nava() {
   return (
@@ -10,18 +21,29 @@ function Nava() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-      <Nav.Link href="patients">Patients</Nav.Link>
+
+
+      
       <NavDropdown title="Orders" id="basic-nav-dropdown">
 
+        <NavDropdown.Item>
+        <Link to={"/NewOrders"}>New Order w/Patients</Link>
+        </NavDropdown.Item>
 
-          <NavDropdown.Item href="NewOrders">New Order w/Patients</NavDropdown.Item>
-          <NavDropdown.Item href="ExistingOrders">Existing Orders</NavDropdown.Item>
+        <NavDropdown.Item>
+        <Link to={"/ExistingOrders"}>Existing Orders</Link>  
+        </NavDropdown.Item>
 
-        </NavDropdown>
+      </NavDropdown>
 
         
-        <Nav.Link href="Results">Results</Nav.Link>
-        <Nav.Link href="Tests">Tests</Nav.Link>       
+        <Nav>
+        <Link to={"/Results"}>Results</Link>
+        </Nav>
+
+        
+
+
       </Nav>
     
     </Navbar.Collapse>

@@ -66,6 +66,7 @@ module.exports = {
 
 		create: async function (data) {
 			
+			
 	    try {
 
 	        var patients = await db.Patient.create(data);

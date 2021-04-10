@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
-
+import ResultsEntry from "./ResultsEntry";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -15,6 +16,8 @@ import {
 } from "../components/Form";
 
 function Results() {
+
+
 
   // Setting our component's initial state
   const [orders, setOrders] = useState([])
@@ -51,6 +54,7 @@ function Results() {
                 
 
     return (
+      <>
       <Container fluid>
 
       <Jumbotron>
@@ -146,6 +150,10 @@ function Results() {
         </Row>
 
     </Container>
+
+      
+
+      </>
     );
 }
                 

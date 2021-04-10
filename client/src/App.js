@@ -38,7 +38,7 @@ function App() {
             < NewOrders/>
           </Route>
 
-          <Route exact path={[ "/results"]}>
+          <Route exact path={[ "/Results"]}>
             < Results/>
           </Route> 
           

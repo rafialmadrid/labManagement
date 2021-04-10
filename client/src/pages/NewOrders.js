@@ -2,17 +2,87 @@ import React, { useState, useEffect } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Table from 'react-bootstrap/Table';
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import {
-  Input, Email, Sex, TextArea,HeaderLabel, FormBtn
-} from "../components/Form";
+import { useFormik } from "formik";
+import { Input, Email, Sex, TextArea,HeaderLabel, FormBtn } from "../components/Form";
+
 
 function NewOrders() {
   // Setting our component's initial state
+
+     const formik = useFormik({
+
+         initialValues: {
+          
+          
+          patient: {
+
+             firstName: 'AL',
+             lastName: 'R',
+             dateOfBirth: '',
+             gender: 'F',
+             email: 'ASDAS@gmail',
+             adress: '121121'
+
+          },
+
+          order: {
+            type: "U",
+            subtotal: 555.00,
+            discount: 0.00,
+            iva: 0.16,
+            tax: 0,
+            total: 20.00,
+            charge: 98.00,
+            branch: "MATRIZ"
+          },
+
+           test: 
+            [
+                {
+                  testCatalogueId: "606f57c88d621893a41eebf9",
+                  delivery: "2",
+                  type: "N"
+                },
+                {
+                  testCatalogueId: "606f5a6a8d621893a41eebfe",
+                  delivery: "2",
+                  type: "N"
+                }
+            ]
+
+        
+        
+         },
+
+       onSubmit: values => {
+         
+         
+         API.createPatientAndOrder(values) 
+         .then(res => {
+            console.log(res);     
+          })
+         .catch(err => console.log(err));
+       },
+
+     });
+
+
+  function getTestCatalogue (code) {
+
+    API.getTestCatalogue(code)
+
+      .then(res => {
+      
+      })
+      .catch(err => console.log(err));
+  }
+
   
   // When the form is submitted, use the API.saveBook method to save the book data
   // Then reload books from the database
@@ -30,35 +100,58 @@ function NewOrders() {
         <Row>
         <Col size="md">
           <h3>Patient's Information</h3>
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <label>First Name</label>
-            <Input
-              name="FirstName"
+            <input
+              id="patient.firstName"
+              name="patient.firstName"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.patient.firstName}
               placeholder="Name (required)"
               />
             <label>Last Name</label>
-            <Input
-              name="LastName"
+            <input
+              id="patient.lastName"
+              name="patient.lastName"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.patient.lastName}
               placeholder="Name (required)"
               />
             <label>Date of Birth</label>
-            <Input
-              name="DOB"
+            <input
+              id="patient.dateOfBirth"
+              name="patient.dateOfBirth"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.patient.dob}
               placeholder="DOB (required)"
               />
             <Sex
-              name="Sex"
-              />
+              id="patient.gender"
+              name="patient.gender"
+              type="text"
+              />  
             &nbsp;&nbsp;
-            <Email
-              name="Email"
+            <input
+              id="patient.email"
+              name="patient.email"
+              type="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
               placeholder="Email (required)"
               />
             <label>Address</label>
             <TextArea
-              name="Address"
+              id="patient.adress"
+              name="patient.adress"
+              type="text"
+              onChange={formik.handleChange}
+              value={formik.values.address}
               placeholder="Address (Required)"
               />
+              <button type="submit">Submit</button>
           </form>
         </Col>
         </Row>
@@ -70,10 +163,11 @@ function NewOrders() {
           <Row>  
           <Col size="md">
           <form>
-            <label>ID Test</label>
-            <Input
+            <label>Test Code</label>
+            <Input 
               name="id"
-              placeholder="Type test ID number"
+              id="test-code"
+              placeholder="Type test code"
               />
             </form>
             </Col>
@@ -104,10 +198,44 @@ function NewOrders() {
               />
               </form>
               </Col>
+
             </Row>
         </Col>
         </Row>
         &nbsp;&nbsp;
+
+        <Row>
+          <Table hover variant="dark" size="sm">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Test</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Days</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            {
+
+                <>
+                 <tr key={""}>
+                    <td>{}</td>                      
+                    <td>{}</td>                      
+                    <td>{}</td>                      
+                    <td>{}</td>                      
+                    <td>{}</td>                      
+                 </tr>
+                 </>
+
+            }
+
+            </tbody>
+          </Table>
+
+        </Row>
+
         <Row>
         <Col size="md-6">
           <form>
