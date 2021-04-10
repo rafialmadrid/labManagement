@@ -127,8 +127,6 @@ These are some improved functionalities we want to add to the project in the nea
 ​
 * General improvement to user's functionalities and interface: a status showing what user is logged in, and a functionality to edit or add users' information to the profile page.
 ​
-* Integrate an email/calendar system for patients: send email remainders to patients about upcoming tests and discounts. 
-​
 * Create a separate User system for clients, so they can also access their information, balance account, and existing orders online. 
 ​
 ---
