@@ -19,10 +19,21 @@ module.exports = {
   },
 
 
-  findById: async function (req, res, next) {
-    try {
 
-      var patient = await services.Patient.findById({_id: req.params.id});
+  find: async function (req, res, next) {
+    try {
+      
+      //console.log(req.query);
+
+      var query = {}  
+      if(req.query.firstName) query.firstName = new RegExp(req.query.firstName, 'i');
+      if(req.query.lastName) query.lastName = new RegExp( req.query.lastName, 'i');
+      if(req.query._id) query._id = req.query._id;
+
+
+      console.log(query);
+
+      var patient = await services.Patient.find(query);
 
       return res.status(200).json({ status: 200, data: patient, message: "Successfully Patient Retrieved"})
 
@@ -32,6 +43,7 @@ module.exports = {
 
     }
   },
+
 
   create: async function (req, res) {
       // Validate request parameters, queries using express-validator

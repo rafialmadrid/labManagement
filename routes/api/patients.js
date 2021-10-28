@@ -10,9 +10,13 @@ router
 	.put(controllers.Patient.update)
 	.delete(controllers.Patient.remove);
 
+// router
+// 	.route('/:id')
+// 	.get(controllers.Patient.findById);
+
 router
-	.route('/:id')
-	.get(controllers.Patient.findById);
+	.route('/patient')
+	.get(controllers.Patient.find);
 
 module.exports = router;
 

@@ -13,7 +13,7 @@ module.exports = {
   
   createPatientWithOrder: async function(req, res){
             
-            
+            console.log(req.body.patient)
             
       try{
 
@@ -68,6 +68,12 @@ module.exports = {
     } 
 
   },
+
+
+
+  
+
+
 
 
 

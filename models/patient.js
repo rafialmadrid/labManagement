@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 const PatientSchema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  age: {type: Number, required: true},
+  age: {type: Number},
   dateOfBirth: {type: String},
-  gender: {type: String, required: true},
+  gender: {type: String},
   phone: String,
   email: String,
   adress: String,

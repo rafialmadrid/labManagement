@@ -3,44 +3,53 @@ var db = require('../models')
 
 module.exports = {
 	
+
+		create: async function (data) {
+			
+		    try {
+
+		        var testCatalogues = await db.TestCatalogue.create(data);
+		        return testCatalogues;
+
+		    } catch (e) {
+		        // Log Errors
+		        throw Error('Error while Paginating TestCatalogue')
+		    }	
+		    
+		},
+
+
 		findAll: async function (query, page, limit) {
 
-	    try {
+		    try {
 
-	        var testCatalogues = await db.TestCatalogue.find(query)
-	        return testCatalogues;
+		        var testCatalogues = await db.TestCatalogue.find(query)
+		        return testCatalogues;
 
-	    } catch (e) {
-	        // Log Errors
-	        throw Error('Error while Paginating TestCatalogues')
-	    }
-	},
+		    } catch (e) {
+		        // Log Errors
+		        throw Error('Error while Paginating TestCatalogues')
+		    }
 
-		findById: async function(data) {
+		},
+
+
+		find: async function (data) { 
+
 			try {
 
-				var testCatalogue = await db.TestCatalogue.findById(data._id)
-				.populate("parameters");
+				var testCatalogue = await db.TestCatalogue.find(data);
 				return testCatalogue;
 
 			} catch (e) {
-				//Log Errors
-				throw Error('Error while Paginating TestCatalogue');
-			}
-		},
-
-		findByCode: async function (data) {
-			try {
-
-				var testCatalogue = await db.TestCatalogue.findOne({code: data});
-				return testCatalogue;
-
-			}catch (e) {
 
 				throw Error('Error while Paginating TestCatalogue');
 
 			}
 		},
+
+		
+
 
 		update: async function (data){
 				
@@ -64,18 +73,6 @@ module.exports = {
 		},
 
 
-		create: async function (data) {
-			
-	    try {
-
-	        var testCatalogues = await db.TestCatalogue.create(data);
-	        return testCatalogues;
-
-	    } catch (e) {
-	        // Log Errors
-	        throw Error('Error while Paginating TestCatalogue')
-	    }	
-	},
 
 		remove: async function (data) {
 			try {

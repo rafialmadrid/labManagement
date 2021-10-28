@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var db = require('../models')
+var db = require('../models');
 
 module.exports = {
 	
@@ -15,6 +15,7 @@ module.exports = {
 	        throw Error('Error while Paginating Patients')
 	    }
 	},
+
 
 		findById: async function(data) {
 			try {
@@ -40,7 +41,21 @@ module.exports = {
 			}
 		},
 
-		update: async function (data){
+		find: async function (data) { 
+
+			try {
+
+				var patient = await db.Patient.find(data);
+				return patient;
+
+			} catch (e) {
+
+				throw Error('Error while Paginating Patient');
+
+			}
+		},
+
+		update: async function (data) {
 		
 			try {
 				
@@ -66,9 +81,8 @@ module.exports = {
 
 		create: async function (data) {
 			
-			
 	    try {
-
+	    	
 	        var patients = await db.Patient.create(data);
 	        return patients;
 
